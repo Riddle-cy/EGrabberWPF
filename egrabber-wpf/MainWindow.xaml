@@ -1,0 +1,107 @@
+﻿<Window x:Class="EGrabberWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EGrabberWPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d"
+        Loaded="featuresID"
+        Title="EGrabber WPF" Height="600" Width="600" FontWeight="Bold">
+    <Border Padding="10">
+        <StackPanel Loaded="featuresID" HorizontalAlignment="Left" Width="572" Margin="0,-10,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="11*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock FontWeight="Bold" Margin="59,10,380,10" Grid.Column="0" Grid.ColumnSpan="2"><Run Text="InterfaceID"/></TextBlock>
+                <TextBox Grid.Column="1" Margin="10,10,10,10" Name="interfaceID" IsReadOnly="True" >
+                </TextBox>
+                <materialDesign:PackIcon Kind="ExpansionCard" Height="34" Width="54" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="CameraID" FontWeight="Bold" Margin="64,10,16,10" Grid.Column="0"/>
+                <TextBox Grid.Column="1" Margin="10,10,10,10" Name="cameraID" IsReadOnly="True">
+                </TextBox>
+                <materialDesign:PackIcon Kind="Camera" RenderTransformOrigin="3.938,0.125" Height="Auto" VerticalAlignment="Stretch" Margin="14,0,0,10" Width="28" />
+            </Grid>
+
+
+            <Grid Height="282" RenderTransformOrigin="0.594,0.586">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.113"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+
+                <TextBlock Text="FrameRate" FontWeight="Bold" Margin="25,10,462,122" Grid.Column="0"/>
+                <TextBox 
+                    Name="TxtFR"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding FrameRate,UpdateSourceTrigger=PropertyChanged}" Margin="127,0,145,252"/>
+                <TextBlock Text="FileStream_1" FontWeight="Bold" Margin="25,45,471,91" Grid.Column="0"/>
+                <TextBox
+                    Name="Path1"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding Path_1,UpdateSourceTrigger=PropertyChanged}" Margin="127,30,145,222"/>
+                <TextBlock Text="FileStream_2" FontWeight="Bold" Margin="25,81,462,53" Grid.Column="0"/>
+                <TextBox
+                    Name="Path2"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding Path_2,UpdateSourceTrigger=PropertyChanged}" Margin="127,65,145,187"/>
+                <TextBlock Text="BMP_Path" FontWeight="Bold" Margin="25,117,470,10"/>
+                <TextBox
+                    Name="DecodePath"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding BmpPath,UpdateSourceTrigger=PropertyChanged}" Margin="127,100,145,152"/>
+                <TextBlock Text="Capture_NUM" FontWeight="Bold" Margin="25,148,462,68"/>
+                <TextBox
+                    Name="CapNum"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding CapNum,UpdateSourceTrigger=PropertyChanged}" Margin="127,135,145,117"/>
+                <TextBlock Text="Capture_TIME" FontWeight="Bold" Margin="25,179,462,87"/>
+                <TextBox
+                    Name="CapTime"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding CapTime,UpdateSourceTrigger=PropertyChanged}" Margin="127,165,145,87"/>
+                <TextBlock Text="ExposureTime" FontWeight="Bold" Margin="25,210,462,53"/>
+                <TextBox
+                    Name="ExposureTime"
+                    Width="300"
+                    Height="30"
+                    Text="{Binding ExposureTime,UpdateSourceTrigger=PropertyChanged}" Margin="127,195,145,57"/>
+                <CheckBox Name="IfCapAccordingTime" Content="指定采集时长" HorizontalAlignment="Left" Margin="454,142,0,0" VerticalAlignment="Top" Checked="IfCapAccordingTime_Checked"/>
+            </Grid>
+            <Grid Height="285" RenderTransformOrigin="0.516,0.589">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="133*"/>
+                    <ColumnDefinition Width="143*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="StartStream" Click="Button_Start" Grid.Column="0" Margin="10,10,10,238" Grid.ColumnSpan="2"/>
+                <Button Content="StopStream" Click="Button_Stop" Margin="10,47,10,201" Grid.ColumnSpan="2"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
+
+    
+    
